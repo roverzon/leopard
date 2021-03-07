@@ -1,0 +1,32 @@
+from django.db import models
+
+
+class CashFlow(models.Model):
+    symbol = models.CharField(max_length=10, blank=False, default='')
+    report_type = models.CharField(max_length=255, blank=False, default='')
+    reported_currency = models.CharField(max_length=255, blank=False, default='USD')
+    fiscal_date_ending = models.DateTimeField(default='1900-01-01')
+    fiscal_year = models.CharField(max_length=10,default='1900-01-01')
+    investments = models.FloatField(default=0.0)
+    change_in_liabilities = models.FloatField(default=0.0)
+    cashflow_from_investment = models.FloatField(default=0.0)
+    other_cashflow_from_investment = models.FloatField(default=0.0)
+    net_borrowings = models.FloatField(default=0.0)
+    cashflow_from_financing = models.FloatField(default=0.0)
+    other_cashflow_from_financing = models.FloatField(default=0.0)
+    change_in_operating_activities = models.FloatField(default=0.0)
+    net_income = models.FloatField(default=0.0)
+    change_in_cash = models.FloatField(default=0.0)
+    operating_cashflow = models.FloatField(default=0.0)
+    other_operating_cashflow = models.FloatField(default=0.0)
+    depreciation = models.FloatField(default=0.0)
+    dividend_payout = models.FloatField(default=0.0)
+    stock_sale_and_purchase = models.FloatField(default=0.0)
+    change_in_inventory = models.FloatField(default=0.0)
+    change_in_account_receivables = models.FloatField(default=0.0)
+    change_in_net_income = models.FloatField(default=0.0)
+    capital_expenditures = models.FloatField(default=0.0)
+    change_in_receivables = models.FloatField(default=0.0)
+    change_in_exchange_rate = models.FloatField(default=0.0)
+    change_in_cash_and_cash_equivalents = models.FloatField(default=0.0)
+
