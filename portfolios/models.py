@@ -26,4 +26,7 @@ class Portfolio(models.Model):
     portfolio_tags = ArrayField(models.CharField(max_length=10))
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
+    is_deleted = models.BooleanField(default=False)
+    is_default = models.BooleanField(default=False)
+
 

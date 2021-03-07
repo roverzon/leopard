@@ -13,6 +13,7 @@ class VirtualAccount(models.Model):
         on_delete=models.CASCADE
     )
     bank_account = models.ForeignKey(BankAccount, on_delete=models.CASCADE)
+    amount = models.FloatField()
     tags = ArrayField(models.CharField(max_length=100))
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
