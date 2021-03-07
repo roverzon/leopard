@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'tickers.apps.TickersConfig',
     'ticker_news.apps.TickerNewsConfig',
     'pgfinancials.apps.PgfinancialsConfig',
+    'bank_accounts.apps.BankAccountsConfig',
+    'virtual_accounts.apps.VirtualAccountsConfig',
     'users',
     'corsheaders',
 ]

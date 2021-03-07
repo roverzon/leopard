@@ -2,6 +2,7 @@ from django.db import models
 from django.conf import settings
 from django.contrib.postgres.fields import ArrayField
 from django.utils import timezone
+from virtual_accounts.models import VirtualAccount
 
 
 class Portfolio(models.Model):
@@ -10,6 +11,8 @@ class Portfolio(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
+    tags = ArrayField(models.CharField(max_length=100))
+    virtual_account = models.ForeignKey(VirtualAccount, on_delete=models.CASCADE)
     symbols = ArrayField(models.CharField(max_length=10))
     weights = ArrayField(models.FloatField())
     budgets = ArrayField(models.FloatField())

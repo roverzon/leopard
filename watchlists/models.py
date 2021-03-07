@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from overviews.models import Overview
 from django.contrib.postgres.fields import ArrayField
 from django.utils import timezone
+from virtual_accounts.models import VirtualAccount
 
 
 class WatchList(models.Model):
@@ -12,10 +13,10 @@ class WatchList(models.Model):
         settings.AUTH_USER_MODEL,
         on_delete=models.CASCADE
     )
-    watchlist_tags = ArrayField(models.CharField(max_length=100))
+    tags = ArrayField(models.CharField(max_length=100))
+    symbol_cnt = models.IntegerField(default=1)
     created_at = models.DateTimeField(default=timezone.now)
     updated_at = models.DateTimeField(default=timezone.now)
-    symbol_cnt = models.IntegerField(default=1)
     is_deleted = models.BooleanField(default=False)
     is_default = models.BooleanField(default=False)
 
